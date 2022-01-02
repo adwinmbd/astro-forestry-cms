@@ -1,24 +1,21 @@
 ---
 // Layout Import
-import MainLayout from '../layouts/MainLayout.astro'
-
-//Components
-let allPosts = await Astro.fetchContent('../data/*.md');
+import MainLayout from '../../layouts/MainLayout.astro'
+let allPosts = await Astro.fetchContent('../../data/*.md');
 allPosts = allPosts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(a.publishDate).valueOf());
-const recentPosts = allPosts.slice(0, 3);
 const readableDate =  (date) => {
     return new Date(date).toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric'});
 }
 ---
 <MainLayout 
-  title="Home" 
-  description={`Hey! This Muamba a simple Astro blog template.`}>
+  title="Posts" 
+  description={`Muamba Blog Posts.`}>
     <div class="content">
         <div class="container">
-            <div class="home" id="home">
-                <h1 class="pageTitle">Recent Posts</h1>
+            <div class="home">
+                <h1 class="pageTitle">Posts</h1>
                 <div class="posts noList">
-                    {recentPosts.map((post, index) => {
+                    {allPosts.map((post, index) => {
                         const href = `/posts/${post.file.pathname.split('/').pop().split('.').shift()}`;
                         return (
                             <div class="articles">
