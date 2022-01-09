@@ -1,11 +1,15 @@
 ---
-title: "This post demonstrates post content styles"
-date: 2020-05-25 16:27:21
+title: This post demonstrates post content styles
+date: 2020-05-25T16:27:21.000+00:00
 draft: false
-description: ""
-tags: ["astro", "development"]
----
+description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum
+  neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor,
+  ultricies id dignissim ac, bibendum in velit.
+tags:
+- astro
+- development
 
+---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit.
 
 ## Some great heading (h2)
