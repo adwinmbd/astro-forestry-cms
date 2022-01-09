@@ -8,7 +8,7 @@ sections:
   path: src/data/post
   label: Posts
   create: documents
-  match: "*.md"
+  match: "**/*.md"
   templates:
   - post
 upload_dir: uploads
