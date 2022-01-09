@@ -48,4 +48,5 @@ Feel free to check [our documentation](https://github.com/withastro/astro) or ju
 ## To-do
 
 - [ ] Add pagination
+- [ ] Add Forestry CMS
 - [ ] Fix responsive mobile navigation
