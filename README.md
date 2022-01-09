@@ -8,14 +8,39 @@ Inside of your Astro project, you'll see the following folders and files:
 
 ```
 /
+├── .forestry/
+│   ├── front_matter/
+│   │    ├── templates
+│   │        └── post.yml
+│   └── settings.yml
 ├── public/
+│   ├── assets/
+│   │    ├── css
+│   │    │    └── site.css
+│   │    ├── img
+│   │    │    ├── logo.svg
+│   │    │    └── touring.jpg
+│   │    └── js
+│   │         ├── dropcap.min.js
+│   │         └── responsive-nav.min.js
 │   ├── robots.txt
 │   └── favicon.ico
 ├── src/
 │   ├── components/
-│   │   └── Tour.astro
+│   │   ├── Footer.astro
+│   │   ├── Header.astro
+│   │   ├── MainHead.astro
+│   │   └── Pagination.astro
+│   ├── data/
+│   │    └── *.md
 │   └── pages/
+│       ├── posts
+│       │    ├── index.astro
+│       │    └── [slug].astro
+│       ├── about.astro
+│       ├── contact.astro
 │       └── index.astro
+├── astro.config.mjs
 └── package.json
 ```
 
@@ -47,6 +72,4 @@ Feel free to check [our documentation](https://github.com/withastro/astro) or ju
 
 ## To-do
 
-- [ ] Add pagination
-- [ ] Add Forestry CMS
 - [ ] Fix responsive mobile navigation
