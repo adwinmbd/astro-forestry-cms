@@ -5,10 +5,10 @@ admin_path:
 webhook_url: 
 sections:
 - type: directory
-  path: src/data/post
+  path: src/post
   label: Posts
   create: documents
-  match: "**/*.md"
+  match: "*.md"
   templates:
   - post
 upload_dir: uploads
