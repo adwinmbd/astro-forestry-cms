@@ -1,11 +1,15 @@
 ---
-title: "Welcome to Astro"
-date: 2020-02-25 20:32:11
+title: Welcome to Astro
+date: 2020-02-25T20:32:11.000+00:00
 draft: false
-description: ""
-tags: ["life"]
----
+description: You’ll find this post in your post directory. Go ahead and edit it and
+  re-build the site to see your changes. You can rebuild the site in many different
+  ways, but the most common way is to run npm start, which launches a web server and
+  auto-regenerates your site when a file is updated.
+tags:
+- life
 
+---
 You’ll find this post in your `post` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `npm start`, which launches a web server and
 auto-regenerates your site when a file is updated.
 
