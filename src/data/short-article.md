@@ -1,5 +1,6 @@
 ---
 title: Some articles are just so short
+slug: short-article
 date: 2020-03-25T20:41:38.000+00:00
 draft: false
 description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod

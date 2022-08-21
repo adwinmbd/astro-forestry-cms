@@ -1,5 +1,6 @@
 ---
 title: This post demonstrates post content styles
+slug: "content-styling"
 date: 2020-05-25T16:27:21.000+00:00
 draft: false
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum

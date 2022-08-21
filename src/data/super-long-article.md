@@ -1,6 +1,6 @@
 ---
-title: Some articles are just so long they deserve a really long title to see if things
-  will break well
+title: Some articles are just so long they deserve a really long title to see if things will break well
+slug: super-long-article
 date: 2020-04-25T16:59:52.000+00:00
 draft: false
 description: Eos eu docendi tractatos sapientem, brute option menandri in vix, quando

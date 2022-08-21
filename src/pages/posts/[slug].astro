@@ -1,34 +1,35 @@
 ---
 // Layout Import
-import getPostData from '../../utils/getPostData';
-import MainLayout from '../../layouts/MainLayout.astro'
+import MainLayout from "../../layouts/MainLayout.astro";
 
-export function getStaticPaths() {
-  const posts = Astro.fetchContent('../../data/*.md');
-  return posts.map(p => ({
-    params: { slug: p.file.pathname.split('/').pop().split('.').shift() },
+export async function getStaticPaths() {
+  const posts = await Astro.glob("../../data/*.md");
+  return posts.map((p) => ({
+    params: { slug: p.frontmatter.slug },
     props: { post: p },
   }));
 }
 
-const { Content, title, description, date, heroImage } = Astro.props.post;
-const { slug } = getPostData(Astro.props.post)
-const readableDate =  (date) => {
-    return new Date(date).toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric'});
-}
+const { Content, frontmatter } = Astro.props.post;
+const readableDate = (date: Date) => {
+  return new Date(date).toLocaleDateString("en-US", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
+};
 ---
-<MainLayout 
-  title="Post" 
-  description={`Muamba Blog Post.`}>
-    <div class="content">
-        <div class="container">
-            <article class="post">
-                <header>
-                    <h1 class="postTitle">{title}</h1>
-                    <p class="meta">{readableDate(date)}</p>
-                </header>
-                <Content />
-            </article>
-        </div>
+
+<MainLayout title="Post" description={`Muamba Blog Post.`}>
+  <div class="content">
+    <div class="container">
+      <article class="post">
+        <header>
+          <h1 class="postTitle">{frontmatter.title}</h1>
+          <p class="meta">{readableDate(frontmatter.date)}</p>
+        </header>
+        <Content />
+      </article>
     </div>
+  </div>
 </MainLayout>

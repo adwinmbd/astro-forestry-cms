@@ -1,6 +1,7 @@
 ---
 title: Welcome to Astro
 date: 2020-02-25T20:32:11.000+00:00
+slug: welcome-to-astro
 draft: false
 description: You’ll find this post in your post directory. Go ahead and edit it and
   re-build the site to see your changes. You can rebuild the site in many different

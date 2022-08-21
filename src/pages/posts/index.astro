@@ -1,32 +1,49 @@
 ---
 // Layout Import
-import MainLayout from '../../layouts/MainLayout.astro'
-let allPosts = await Astro.fetchContent('../../data/*.md');
-allPosts = allPosts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(a.publishDate).valueOf());
-const readableDate =  (date) => {
-    return new Date(date).toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric'});
-}
+import MainLayout from "../../layouts/MainLayout.astro";
+let allPosts = await Astro.glob("../../data/*.md");
+allPosts = allPosts.sort(
+    (a, b) =>
+        new Date(b.frontmatter.publishDate).valueOf() -
+        new Date(a.frontmatter.publishDate).valueOf()
+);
+const readableDate = (date: Date) => {
+    return new Date(date).toLocaleDateString("en-US", {
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+    });
+};
 ---
-<MainLayout 
-  title="Posts" 
-  description={`Muamba Blog Posts.`}>
+
+<MainLayout title="Posts" description={`Muamba Blog Posts.`}>
     <div class="content">
         <div class="container">
             <div class="home">
                 <h1 class="pageTitle">Posts</h1>
                 <div class="posts noList">
-                    {allPosts.map((post, index) => {
-                        const href = `/posts/${post.file.pathname.split('/').pop().split('.').shift()}`;
-                        return (
-                            <div class="articles">
-                                <article>
-                                    <span class="date">{readableDate(post.date)}</span>
-                                    <h3><a class="post-link" href={href}>{post.title}</a></h3>
-                                    <p>{post.description}</p>
-                                </article>
-                            </div>
-                        )
-                    })}
+                    {
+                        allPosts.map((post, index) => {
+                            const href = `/posts/${post.frontmatter.slug}`;
+                            return (
+                                <div class="articles">
+                                    <article>
+                                        <span class="date">
+                                            {readableDate(
+                                                post.frontmatter.date
+                                            )}
+                                        </span>
+                                        <h3>
+                                            <a class="post-link" href={href}>
+                                                {post.frontmatter.title}
+                                            </a>
+                                        </h3>
+                                        <p>{post.frontmatter.description}</p>
+                                    </article>
+                                </div>
+                            );
+                        })
+                    }
                 </div>
             </div>
         </div>
